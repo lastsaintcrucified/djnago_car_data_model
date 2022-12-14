@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block page_title %} Car {% endblock %} 
+{% block content %}
+<ul>
+  {% for car in cars %}
+    <a href="{{car.get_absolute_url}}">
+        <li>
+            Company name is <strong>{{car.company}}</strong>-- manufactured in
+            {{car.country}}-- used for {{car.used}} years
+        </li>
+    </a>
+  {% endfor %}
+</ul>
+{% endblock %}
